@@ -3,38 +3,48 @@
 @import "fonts/ravie.css";
 @import "fonts/verdana.css";
 
+:root{
+  --cor-strong: #d027aa;
+  --recipiente-grad: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
+  --cor-bordas-recipiente: #d3d3d3;
+  --cor-branco: #fff;
+  --cor-bordas-cardapio: #aac0ae;
+  --cor-hs-texto: #333;
+  --cor-hs-cabecalho: #e90c0c;
+  --cor-bg-cardapio: rgba(255, 255, 255, 0.2)
+}
+
 body {
-  background-color: #fff;
+  background-color: var(--cor-branco);
   font-family: "Verdana";
   margin: 0px;
 }
 
 strong {
-  color: #d027aa;
+  color: var(--cor-strong);
 }
 
 #recipiente {
-  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
-  border-left: 1px solid #d3d3d3;
-  border-right: 1px solid #d3d3d3;
+  background-image: var(--recipiente-grad);
+  border-left: 1px solid var(--cor-bordas-recipiente);
+  border-right: 1px solid var(--cor-bordas-recipiente);
 }
-
 #cardapio {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-top: 1px solid #aac0ae;
-  border-bottom: 1px solid #aac0ae;
-  border-left: 1px solid #aac0ae;
+  background-color: var(--cor-bg-cardapio);
+  border-top: 1px solid var(--cor-bordas-cardapio);
+  border-bottom: 1px solid var(--cor-bordas-cardapio);
+  border-left: 1px solid var(--cor-bordas-cardapio);
 }
 
 #cardapio h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--cor-hs-texto);
   margin-top: 30px;
 }
 
 #cardapio article {
   font-size: 14px;
-  color: #333;
+  color: var(--cor-hs-texto);
 }
 
 /* EXERCÍCIO 2: layout da página */
@@ -84,7 +94,7 @@ html, body, #recipiente {
 #cabecalho-pagina h1 {
   margin: 0;
   font-size: 36px;
-  color: #e90c0c;
+  color: var(--cor-hs-cabecalho);;
   font-weight: normal;
   font-family: "Ravie";
 
@@ -93,7 +103,7 @@ html, body, #recipiente {
 #cabecalho-pagina h2 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: var(--cor-hs-texto);
   font-weight: normal;
   text-align: right;
 }
@@ -137,7 +147,6 @@ article {
   left:0px
 }
 
-
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 #siri {
   position: relative;
@@ -158,4 +167,14 @@ article {
    as custom properties */
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
-
+   @media (prefers-color-scheme: dark) {
+    :root {
+      --cor-strong: #853e75;
+      --recipiente-grad: linear-gradient(to bottom, #272611, #0c1e24 80%);
+      --cor-bordas-recipiente: #4e4d4d;
+      --cor-bordas-cardapio: #59685b;
+      --cor-hs-texto: rgba(255, 255, 255, 0.664);
+      --cor-hs-cabecalho: #743333;
+      --cor-bg-cardapio: rgba(24, 23, 23, 0.726);
+    }
+  }
