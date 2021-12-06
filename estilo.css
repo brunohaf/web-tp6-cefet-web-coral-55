@@ -54,7 +54,6 @@ html, body, #recipiente {
 #cabecalho-pagina {
   grid-column: 2/2;
   grid-row: 1/2;
-  padding: 10px;
 }
 
 #lateral {
@@ -79,7 +78,8 @@ html, body, #recipiente {
 
 /* EXERCÍCIO 3: cabeçalho da página */
 #cabecalho-pagina {
-
+  text-align: center;
+  padding: 10px;
 }
 
 #cabecalho-pagina h1 {
@@ -88,6 +88,7 @@ html, body, #recipiente {
   color: #e90c0c;
   font-weight: normal;
   font-family: "Ravie";
+
 }
 
 #cabecalho-pagina h2 {
@@ -95,10 +96,15 @@ html, body, #recipiente {
   font-size: 24px;
   color: #333;
   font-weight: normal;
+  text-align: right;
 }
 
 /* EXERCÍCIO 4: cada item do menu */
 article {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
